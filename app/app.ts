@@ -22,10 +22,12 @@ class Hero {
             <label for="name">name: </label>
             <div><input [(ngModel)]="hero.name" placeholder="name" id="name"></div>
         </div>
+        
         <div>
             <label for="code">code: </label>
-            <div><input [(ngModel)]="disregardCode" (keyup)="codeChange()" placeholder="code" id="code"></div>
+            <div><input #item (keyup)="codeChange(item.value)" placeholder="code" id="code"></div>
         </div>
+        
         <h3>Disregard result = {{result | percent: '.0'}}</h3>
         `,
     directives: [FORM_DIRECTIVES],
@@ -45,8 +47,8 @@ class AppComponent {
     public result: number = this._c.disregard(this.disregardCode);
     public codeChanged = new EventEmitter();
     
-    public codeChange() {
-        this.result = this._c.disregard(this.disregardCode);
+    public codeChange(value: string) {
+        this.result = this._c.disregard(value);
     }
 }
 

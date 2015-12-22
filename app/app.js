@@ -43,13 +43,13 @@ System.register(['angular2/core', 'angular2/common', './calculations', './app.da
                     this.result = this._c.disregard(this.disregardCode);
                     this.codeChanged = new core_1.EventEmitter();
                 }
-                AppComponent.prototype.codeChange = function () {
-                    this.result = this._c.disregard(this.disregardCode);
+                AppComponent.prototype.codeChange = function (value) {
+                    this.result = this._c.disregard(value);
                 };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>{{title}}</h1>\n        <h2>{{hero.name}} details!</h2>\n        <div>\n            <label>id: </label>{{hero.id}}\n        </div>\n        <div>\n            <label for=\"name\">name: </label>\n            <div><input [(ngModel)]=\"hero.name\" placeholder=\"name\" id=\"name\"></div>\n        </div>\n        <div>\n            <label for=\"code\">code: </label>\n            <div><input [(ngModel)]=\"disregardCode\" (keyup)=\"codeChange()\" placeholder=\"code\" id=\"code\"></div>\n        </div>\n        <h3>Disregard result = {{result | percent: '.0'}}</h3>\n        ",
+                        template: "\n        <h1>{{title}}</h1>\n        <h2>{{hero.name}} details!</h2>\n        <div>\n            <label>id: </label>{{hero.id}}\n        </div>\n        <div>\n            <label for=\"name\">name: </label>\n            <div><input [(ngModel)]=\"hero.name\" placeholder=\"name\" id=\"name\"></div>\n        </div>\n        <div>\n            <label for=\"code\">code: </label>\n            <div><input #item (keyup)=\"codeChange(item.value)\" placeholder=\"code\" id=\"code\"></div>\n        </div>\n        <h3>Disregard result = {{result | percent: '.0'}}</h3>\n        ",
                         directives: [common_1.FORM_DIRECTIVES],
                         events: ['codeChanged']
                     }), 

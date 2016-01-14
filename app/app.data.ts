@@ -62,25 +62,20 @@ export const AppData = {
                     { "code": "C", "value": 0.3 },
                     { "code": "D", "value": 0.4 }
                 ],
-                "expenditure": [
-                    {
-                        "code": "",
-                        "value": 0
-                    }
-                ]
+                "expenditure": []
             },
             "nonres": {
                 "benefits": [
-                    {
-                        "code": "",
-                        "value": 0
-                    }
+                    { "code": "NA", "value": 0.1 },
+                    { "code": "NB", "value": 0.2 },
+                    { "code": "NC", "value": 0.3 },
+                    { "code": "ND", "value": 0.4 }
                 ],
                 "expenditure": [
-                    {
-                        "code": "",
-                        "value": 0
-                    }
+                    { "code": "NEA", "value": 0.1 },
+                    { "code": "NEB", "value": 0.2 },
+                    { "code": "NEC", "value": 0.3 },
+                    { "code": "NED", "value": 0.4 }
                 ]
             }
         }

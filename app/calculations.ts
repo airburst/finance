@@ -1,6 +1,4 @@
-import {Lookup} from './lookup';
-
-class Calculation {
+export class Calculation {
     
     private _calcData: any;
     
@@ -28,6 +26,26 @@ class Calculation {
         }
         return _d;
     }
-};
+    
+    public personalAllowance(type: string, asset: number, dob: Date): number {
+        let _pa = 0;
+        
+        // "assetThreshold": {
+        //     "low": 14250,
+        //     "high": 23250
+        // },
 
-export {Calculation};
+        // "ageRelatedAllowance": [
+        //     {"ageLow": 18, "ageHigh": 24, "amount": 100},
+        //     {"ageLow": 25, "ageHigh": 64, "amount": 200},
+        //     {"ageLow": 64, "ageHigh": 999, "amount": 300}
+        // ]
+        
+        // Calculate personal or age-related allowance
+        // Establish whether person is res or non-res
+        // Res is only entitled to the statutory personal allowance
+        if (type === 'res') { return this._calcData.personalAllowance; }
+        
+        return _pa;
+    }
+};

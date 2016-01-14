@@ -46,13 +46,11 @@ export const AppData = {
             "low": 14250,
             "high": 23250
         },
-        "personalAllowance": 0,
+        "personalAllowance": 24.9,
         "ageRelatedAllowance": [
-            {
-                "ageLow": 0,
-                "ageHigh": 0,
-                "amount": 0
-            }
+            {"ageLow": 18, "ageHigh": 24, "amount": 100},
+            {"ageLow": 25, "ageHigh": 64, "amount": 200},
+            {"ageLow": 64, "ageHigh": 999, "amount": 300}
         ],
         "disregards": {
             "res": {

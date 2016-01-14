@@ -62,3 +62,46 @@ describe('Calculations > Disregards: NON-RES', () => {
     });
     
 });
+
+describe('Calculations > Personal Allowance', () => {
+       
+    it('returns the statutory amount for a RES user', () => {
+        let calc = new Calculation(AppData.calculation);
+        let dob = new Date();
+        expect(calc.personalAllowance('res', 0, dob)).toEqual(24.9);
+    });
+    
+    // it('returns zero for an undefined type', () => {
+    //     let calc = new Calculation(AppData.calculation);
+    //     let dob = new Date();
+    //     expect(calc.personalAllowance('res', 0, dob)).toEqual(24.9);
+    // });
+    
+    // it('returns zero for a null type', () => {
+    //     let calc = new Calculation(AppData.calculation);
+    //     let dob = new Date();
+    //     expect(calc.personalAllowance('res', 0, dob)).toEqual(24.9);
+    // });
+    
+    // it('returns zero for an undefined dob', () => {
+    //     let calc = new Calculation(AppData.calculation);
+    //     let dob = new Date();
+    //     expect(calc.personalAllowance('res', 0, dob)).toEqual(24.9);
+    // });
+    
+    // it('returns zero for a null dob', () => {
+    //     let calc = new Calculation(AppData.calculation);
+    //     let dob = new Date();
+    //     expect(calc.personalAllowance('res', 0, dob)).toEqual(24.9);
+    // });
+    
+    // it('returns zero for a malformed dob', () => {
+    //     let calc = new Calculation(AppData.calculation);
+    //     let dob = new Date();
+    //     expect(calc.personalAllowance('res', 0, dob)).toEqual(24.9);
+    // });
+    
+    
+    // asset amounts - wrong type, etc.
+    // correct non-res amounts for various ages
+});

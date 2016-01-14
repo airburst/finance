@@ -1,4 +1,4 @@
-import {Lookup} from './app.data';
+import {Lookup} from './lookup';
 
 class Calculation {
     

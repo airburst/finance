@@ -1,7 +1,4 @@
-class Lookup {
-    public code: string;
-    public value: number
-}
+import {Lookup} from './lookup';
 
 // Disregards
 const disregards: Array<Lookup> = [
@@ -15,4 +12,4 @@ const AppData = {
     disregards: disregards
 };
 
-export {Lookup, AppData};
+export {AppData};

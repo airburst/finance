@@ -1,13 +1,8 @@
 System.register([], function(exports_1) {
-    var Lookup, disregards, AppData;
+    var disregards, AppData;
     return {
         setters:[],
         execute: function() {
-            Lookup = (function () {
-                function Lookup() {
-                }
-                return Lookup;
-            })();
             // Disregards
             disregards = [
                 { "code": "A", "value": 0.1 },
@@ -18,7 +13,6 @@ System.register([], function(exports_1) {
             AppData = {
                 disregards: disregards
             };
-            exports_1("Lookup", Lookup);
             exports_1("AppData", AppData);
         }
     }

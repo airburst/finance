@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/common', './calculations', './app.da
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, common_1, calculations_1, app_data_1;
-    var Hero, AppComponent;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -25,18 +25,9 @@ System.register(['angular2/core', 'angular2/common', './calculations', './app.da
                 app_data_1 = app_data_1_1;
             }],
         execute: function() {
-            Hero = (function () {
-                function Hero() {
-                }
-                return Hero;
-            })();
             AppComponent = (function () {
                 function AppComponent() {
-                    this.title = 'Tour of Heroes';
-                    this.hero = {
-                        id: 1,
-                        name: 'Windstorm'
-                    };
+                    this.title = 'Financial Calculations';
                     // Testing calc
                     this._c = new calculations_1.Calculation(app_data_1.AppData.disregards);
                     this.disregardCode = '';
@@ -49,7 +40,7 @@ System.register(['angular2/core', 'angular2/common', './calculations', './app.da
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>{{title}}</h1>\n        <h2>{{hero.name}} details!</h2>\n        <div>\n            <label>id: </label>{{hero.id}}\n        </div>\n        <div>\n            <label for=\"name\">name: </label>\n            <div><input [(ngModel)]=\"hero.name\" placeholder=\"name\" id=\"name\"></div>\n        </div>\n        <div>\n            <label for=\"code\">code: </label>\n            <div><input #item (keyup)=\"codeChange(item.value)\" placeholder=\"code\" id=\"code\"></div>\n        </div>\n        <h3>Disregard result = {{result | percent: '.0'}}</h3>\n        ",
+                        template: "\n        <h1>{{title}}</h1>\n       \n        <div>\n            <label for=\"code\">code: </label>\n            <div><input #item (keyup)=\"codeChange(item.value)\" placeholder=\"code\" id=\"code\"></div>\n        </div>\n        \n        <h3>Disregard result = {{result | percent: '.0'}}</h3>\n        ",
                         directives: [common_1.FORM_DIRECTIVES],
                         events: ['codeChanged']
                     }), 

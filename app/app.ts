@@ -25,13 +25,13 @@ class AppComponent {
     public title = 'Financial Calculations';
 
     // Testing calc
-    private _c: Calculation = new Calculation(AppData.disregards);
-    public disregardCode: string = '';
-    public result: number = this._c.disregard(this.disregardCode);
+    private _c: Calculation = new Calculation(AppData.calculation);
+    public disregardCode: string = '';    
+    public result: number = this._c.disregard('res', 'benefits', this.disregardCode);
     public codeChanged = new EventEmitter();
     
     public codeChange(value: string) {
-        this.result = this._c.disregard(value);
+        this.result = this._c.disregard('res', 'benefits', value);
     }
 }
 

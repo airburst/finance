@@ -29,13 +29,13 @@ System.register(['angular2/core', 'angular2/common', './calculations', './app.da
                 function AppComponent() {
                     this.title = 'Financial Calculations';
                     // Testing calc
-                    this._c = new calculations_1.Calculation(app_data_1.AppData.disregards);
+                    this._c = new calculations_1.Calculation(app_data_1.AppData.calculation);
                     this.disregardCode = '';
-                    this.result = this._c.disregard(this.disregardCode);
+                    this.result = this._c.disregard('res', 'benefits', this.disregardCode);
                     this.codeChanged = new core_1.EventEmitter();
                 }
                 AppComponent.prototype.codeChange = function (value) {
-                    this.result = this._c.disregard(value);
+                    this.result = this._c.disregard('res', 'benefits', value);
                 };
                 AppComponent = __decorate([
                     core_1.Component({

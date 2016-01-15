@@ -15,8 +15,7 @@ import {DataService} from './data/data.service';
         <h3>Disregard result = {{result | percent: '.0'}}</h3>
         `,
     directives: [FORM_DIRECTIVES],
-    providers: [DataService],
-    events: ['codeChanged']
+    providers: [DataService]
 })
 
 export class AppComponent implements OnInit {
@@ -27,7 +26,6 @@ export class AppComponent implements OnInit {
     public title: string = 'Financial Calculations';
     public disregardCode: string = '';
     public result: number = 0;
-    public codeChanged = new EventEmitter();
 
     // Instantiate the calculation class
     initCalculation() {

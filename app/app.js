@@ -31,13 +31,13 @@ System.register(['angular2/core', 'angular2/common', './calculations', './data/d
                     this.title = 'Financial Calculations';
                     this.disregardCode = '';
                     this.result = 0;
-                    this.codeChanged = new core_1.EventEmitter();
                 }
-                // Initialise
-                // Get AppData and instantiate the calculation class
+                //public codeChanged = new EventEmitter();
+                // Instantiate the calculation class
                 AppComponent.prototype.initCalculation = function () {
                     this._c = new calculations_1.Calculation(this._appData);
                 };
+                // Initialise - Get AppData
                 AppComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._dataService.getData()
@@ -52,8 +52,7 @@ System.register(['angular2/core', 'angular2/common', './calculations', './data/d
                         selector: 'my-app',
                         template: "\n        <h1>{{title}}</h1>\n        <div>\n            <label for=\"code\">code: </label>\n            <div><input #item (keyup)=\"codeChange(item.value)\" placeholder=\"code\" id=\"code\"></div>\n        </div>\n        <h3>Disregard result = {{result | percent: '.0'}}</h3>\n        ",
                         directives: [common_1.FORM_DIRECTIVES],
-                        providers: [data_service_1.DataService],
-                        events: ['codeChanged']
+                        providers: [data_service_1.DataService]
                     }), 
                     __metadata('design:paramtypes', [data_service_1.DataService])
                 ], AppComponent);

@@ -29,12 +29,12 @@ export class AppComponent implements OnInit {
     public result: number = 0;
     public codeChanged = new EventEmitter();
 
-    // Initialise
-    // Get AppData and instantiate the calculation class
+    // Instantiate the calculation class
     initCalculation() {
         this._c = new Calculation(this._appData)
     }
     
+    // Initialise - Get AppData
     ngOnInit() {
         this._dataService.getData()
             .then(appData => this._appData = appData)

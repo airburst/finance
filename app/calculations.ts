@@ -1,9 +1,18 @@
+// import {Injectable} from 'angular2/core';
+
+// @Injectable()
+// export class CalculationService {
+//     getData() {
+//         return AppData;
+//     }
+// }
+
 export class Calculation {
     
     private _calcData: any;
     
-    constructor(public calculationData: any) {
-        this._calcData = calculationData;
+    constructor(public appData: any) {
+        this._calcData = appData.calculation;
     }
     
     public disregard(type: string, disregardType: string, code: string): number {

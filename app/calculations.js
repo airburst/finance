@@ -1,12 +1,19 @@
+// import {Injectable} from 'angular2/core';
 System.register([], function(exports_1) {
     var Calculation;
     return {
         setters:[],
         execute: function() {
+            // @Injectable()
+            // export class CalculationService {
+            //     getData() {
+            //         return AppData;
+            //     }
+            // }
             Calculation = (function () {
-                function Calculation(calculationData) {
-                    this.calculationData = calculationData;
-                    this._calcData = calculationData;
+                function Calculation(appData) {
+                    this.appData = appData;
+                    this._calcData = appData.calculation;
                 }
                 Calculation.prototype.disregard = function (type, disregardType, code) {
                     var _d = 0;
@@ -26,10 +33,29 @@ System.register([], function(exports_1) {
                     }
                     return _d;
                 };
+                Calculation.prototype.personalAllowance = function (type, asset, dob) {
+                    var _pa = 0;
+                    // "assetThreshold": {
+                    //     "low": 14250,
+                    //     "high": 23250
+                    // },
+                    // "ageRelatedAllowance": [
+                    //     {"ageLow": 18, "ageHigh": 24, "amount": 100},
+                    //     {"ageLow": 25, "ageHigh": 64, "amount": 200},
+                    //     {"ageLow": 64, "ageHigh": 999, "amount": 300}
+                    // ]
+                    // Calculate personal or age-related allowance
+                    // Establish whether person is res or non-res
+                    // Res is only entitled to the statutory personal allowance
+                    if (type === 'res') {
+                        return this._calcData.personalAllowance;
+                    }
+                    return _pa;
+                };
                 return Calculation;
             })();
-            ;
             exports_1("Calculation", Calculation);
+            ;
         }
     }
 });
